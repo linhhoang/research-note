@@ -20,3 +20,13 @@ none            100M   20K  100M   1% /run/user
 /dev/sda8       196G  154G   33G  83% /media/13f35f59-f023-4d98-b06f-9dfaebefd6c1
 /dev/sda5        98G   37G   62G  38% /media/4668484A68483B47
 ```
+
+## Check and kill process which is listening specific port
+1. check
+  lsof -t -i:8080
+2. kill process
+  sudo kill -9 PID
+
+``` shell
+$ sudo kill -9 $(lsof -t -i:8080)
+```
